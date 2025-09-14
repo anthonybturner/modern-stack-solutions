@@ -1,0 +1,50 @@
+@use './abstract';
+
+html {
+    background: var(--primary-clr);
+    font-size: var(--font-size);
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+h1 {
+    padding-top: 1rem;
+}
+
+h2 {
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--accent-clr);
+    margin-bottom: 0.5rem;
+}
+
+
+section,
+.site-header {
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background: var(--secondary-clr);
+    box-shadow: 4px 4px 4px -4px;
+
+}
+
+section:hover {
+    box-shadow: 0 2px 8px var(--accent-clr);
+}
+
+
+a {
+    pointer-events: auto;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-text-clr);
+    padding: 1rem;
+}
+
+a:hover {
+    color: var(--accent-clr);
+}

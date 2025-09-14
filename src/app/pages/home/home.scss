@@ -1,0 +1,129 @@
+
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 4rem 2rem;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+  .cta {
+    background: var(--primary-clr);
+    color: var(--accent-clr);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+    &:hover {
+      background: var(--accent-clr);
+      color: #fff;
+    }
+  }
+}
+
+.about, .services, .portfolio, .testimonials, .contact {
+  padding: 3rem 2rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+  color: var(--primary-text-clr);
+}
+
+.service-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+
+  .service-card {
+    background: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    width: 250px;
+
+    .icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+    }
+  }
+}
+
+.portfolio-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .portfolio-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 1.5rem;
+    text-align: center;
+    width: 250px;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #555;
+      font-size: 1rem;
+    }
+  }
+}
+
+.testimonials blockquote {
+  background: #f7f9fc;
+  border-left: 4px solid var(--accent-clr);
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  font-style: italic;
+  color: #333;
+  border-radius: 8px;
+
+  span {
+    display: block;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    color: #00bcd4;
+  }
+}
+
+.footer {
+  background: #1a2233;
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .service-grid, .portfolio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header {
+    flex-direction: column;
+    .nav {
+      margin-top: 1rem;
+    }
+  }
+}

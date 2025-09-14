@@ -20,10 +20,15 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                 "input": "src/assets/images"
               }
             ],
             "styles": [
@@ -82,7 +87,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/images"
               }
             ],
             "styles": [

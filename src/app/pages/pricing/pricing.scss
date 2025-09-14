@@ -1,0 +1,104 @@
+.pricing-table-container {
+    max-width: 1100px;
+    margin: 3rem auto;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    background: var(--secondary-clr);
+    box-shadow: 4px 4px 4px -4px;
+}
+
+.pricing-table-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    p {
+        color: #555;
+        font-size: 1.2rem;
+    }
+}
+
+.pricing-table {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pricing-plan {
+    background: #fff;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+
+    .plan-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .plan-price {
+        font-size: 2.2rem;
+        color: #1a2233;
+        margin-bottom: 1rem;
+        font-weight: bold;
+
+        span {
+            font-size: 1rem;
+            color: #555;
+            margin-left: 0.2rem;
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 1.5rem;
+
+        li {
+            color: #555;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+    }
+
+    .select-btn {
+        background: linear-gradient(90deg, #00bcd4 0%, #2196f3 100%);
+        color: #fff;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        cursor: pointer;
+        font-weight: 600;
+        transition: background 0.2s;
+
+        &:hover {
+            background: linear-gradient(90deg, #2196f3 0%, #00bcd4 100%);
+        }
+    }
+}
+
+.pricing-plan:hover{
+        box-shadow: 0 2px 8px var(--accent-clr);
+
+}
+
+.pricing-plan.featured {
+    transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+    .pricing-table {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-plan {
+        width: 90%;
+    }
+}

@@ -1,0 +1,12 @@
+<h2>Client Questionnaire</h2>
+<form (ngSubmit)="submit()" [formGroup]="questionnaireForm">
+  <label>Name*</label><br/><input formControlName="name"/><br/>
+  <label>Email*</label><br/><input formControlName="email"/><br/>
+  <label>Phone</label><br/><input formControlName="phone"/><br/>
+  <label>Business Name</label><br/><input formControlName="businessName"/><br/>
+  <label>Goals</label><br/><textarea formControlName="goals"></textarea><br/>
+  <label>Must-have features</label><br/><textarea formControlName="mustHaves"></textarea><br/>
+  <label>Budget</label><br/><input formControlName="budget"/><br/>
+  <button type="submit">Submit</button>
+</form>
+<div *ngIf="message">{{message}}</div>

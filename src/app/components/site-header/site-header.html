@@ -1,0 +1,39 @@
+<!-- Header -->
+<header class="site-header">
+    <div class="logo">
+        <svg  viewBox="0 0 260 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Stack Icon -->
+            <g>
+                <rect x="10" y="20" width="40" height="8" rx="4" fill="#00bcd4" />
+                <rect x="14" y="30" width="32" height="8" rx="4" fill="#1a2233" />
+                <rect x="18" y="40" width="24" height="8" rx="4" fill="#2196f3" />
+            </g>
+            <!-- Text -->
+            <text x="60" y="38" font-family="Montserrat, Arial, sans-serif"  font-weight="bold"
+                fill="#1a2233">
+                Modern <tspan fill="#00bcd4">Stack</tspan> Solutions
+            </text>
+        </svg>
+
+    </div>
+    <nav class="nav" [class.active]="isMenuOpen()">
+        <ul>
+            <li>
+                <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="closeMenu()">Home</a>
+            </li>
+            <li>
+                <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+            </li>
+            <li>
+                <a routerLink="/services" routerLinkActive="">Services</a>
+            </li>
+            <li>
+                <a routerLink="/pricing" routerLinkActive="active">Pricing</a>
+            </li>
+            <li>
+                <a routerLink="/contact" routerLinkActive="active">Contact</a>
+            </li>
+        </ul>
+    </nav>
+</header>

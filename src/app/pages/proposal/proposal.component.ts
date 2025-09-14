@@ -1,0 +1,17 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-proposal',
+  standalone: true,
+  template: `
+    <h2>Proposals & Contracts</h2>
+    <p>Download templates you can use for client work:</p>
+    <ul>
+      <li><a href="/assets/docs/Proposal-Sample.docx" download>Proposal Template</a></li>
+      <li><a href="/assets/docs/Full-Contract.docx" download>Full Contract Template</a></li>
+      <li><a href="/assets/docs/One-Page-Agreement.docx" download>One-Page Service Agreement</a></li>
+    </ul>
+    <p>You can customize these templates for each client.</p>
+  `
+})
+export class ProposalComponent { }

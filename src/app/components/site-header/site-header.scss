@@ -1,0 +1,29 @@
+.site-header {
+    display: flex;
+    padding: var(--padding);
+    gap: var(--gap);
+    align-items: var(--primary-align-items);
+
+    .logo{
+        display: flex;
+        align-items: center;
+        width: 280px;
+        height: 60px;
+
+        img, svg{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        text{
+            font-size: var(--font-size);
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 16px;
+        list-style-type: none;
+    }
+}

@@ -1,0 +1,48 @@
+<div class="pricing-table-container">
+  <div class="pricing-table-header">
+    <h1>Pricing Calculator</h1>
+    <p>Select a base project, extra pages, and features to estimate a price range.</p>
+  </div>
+  <div class="pricing-table">
+    <div class="pricing-plan featured">
+      <div class="plan-icon">💻</div>
+      <h3>Base Project</h3>
+      <div class="plan-price">
+        <select #baseSel>
+          <option *ngFor="let b of baseProjects; let i = index" [value]="i">{{b.name}} ({{b.min}}–{{b.max}})</option>
+        </select>
+      </div>
+      <ul>
+        <li>Select the main type of project you need.</li>
+      </ul>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-icon">�</div>
+      <h3>Extra Screens</h3>
+      <div class="plan-price">
+        <input type="number" #extraScreens value="0" min="0" />
+      </div>
+      <ul>
+        <li>Add additional pages or screens to your project.</li>
+      </ul>
+    </div>
+    <div class="pricing-plan">
+      <div class="plan-icon">✨</div>
+      <h3>Features</h3>
+      <div class="plan-price">
+        <ul>
+          <li *ngFor="let f of features; let i=index">
+            <label>
+              <input type="checkbox" [value]="i" #feat{{i}} />
+              {{f.name}} <span class="price">({{f.min}}–{{f.max}})</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+      <ul>
+        <li>Choose extra features to include in your estimate.</li>
+      </ul>
+    </div>
+  </div>
+  <div id="result"></div>
+</div>
