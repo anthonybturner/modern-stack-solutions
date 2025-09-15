@@ -142,7 +142,7 @@ section h2{
 
   .service-grid,
   .portfolio-grid {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -150,7 +150,6 @@ section h2{
   .portfolio-grid .portfolio-item {
 
     padding: 0;
-    width: 100%;
 
   }
   h1,
@@ -190,7 +189,7 @@ section h2{
   .portfolio-grid .portfolio-item {
 
     padding: 0;
-    width: 80%;
+    width: 100%;
 
   }
 
