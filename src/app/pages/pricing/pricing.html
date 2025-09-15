@@ -7,28 +7,25 @@
     <div class="pricing-plan featured">
       <div class="plan-icon">💻</div>
       <h3>Base Project</h3>
+      <p>Select the main type of project you need.</p>
       <div class="plan-price">
         <select #baseSel>
           <option *ngFor="let b of baseProjects; let i = index" [value]="i">{{b.name}} ({{b.min}}–{{b.max}})</option>
         </select>
       </div>
-      <ul>
-        <li>Select the main type of project you need.</li>
-      </ul>
     </div>
     <div class="pricing-plan">
       <div class="plan-icon">�</div>
       <h3>Extra Screens</h3>
+      <p>Add additional pages or screens to your project.</p>
       <div class="plan-price">
         <input type="number" #extraScreens value="0" min="0" />
       </div>
-      <ul>
-        <li>Add additional pages or screens to your project.</li>
-      </ul>
     </div>
     <div class="pricing-plan">
       <div class="plan-icon">✨</div>
       <h3>Features</h3>
+     <p>Choose extra features to include in your estimate.</p>
       <div class="plan-price">
         <ul>
           <li *ngFor="let f of features; let i=index">
@@ -39,9 +36,6 @@
           </li>
         </ul>
       </div>
-      <ul>
-        <li>Choose extra features to include in your estimate.</li>
-      </ul>
     </div>
   </div>
   <div id="result"></div>
