@@ -19,19 +19,18 @@
 
 .service-card {
     @include frosted-glass-bg(var(--frosted-glass-alt-clr));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      padding: 1.5rem;
     text-align: center;
     width: 300px;
-    overflow: hidden;
-    
+    transition: box-shadow 0.2s, transform 0.2s;
     margin-bottom: 2rem;
-    transition: box-shadow 0.2s;
+    overflow: hidden;
 
-    &:hover {
-        box-shadow: 0 4px 16px var(--accent-clr);
+     &:hover {
+        box-shadow: 0 8px 24px var(--accent-clr);
+        transform: translateY(-6px) scale(1.03);
     }
+
 
     .icon {
         font-size: 2.5rem;
@@ -39,10 +38,11 @@
         display: block;
     }
 
-    img {
-        width: 500px;
-        max-width: 100%;
-        height: 200px;        
+   img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
     }
 
 }
