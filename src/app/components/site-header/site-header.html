@@ -19,7 +19,6 @@
         <span></span>
         <span></span>
     </div>
-
     <nav class="nav" [class.active]="isMenuOpen()">
         <ul>
             <li>
@@ -27,17 +26,17 @@
                     (click)="closeMenu()">Home</a>
             </li>
             <li>
-                <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+                <a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">Portfolio</a>
             </li>
             <li>
-                <a routerLink="/services" routerLinkActive="">Services</a>
+                <a routerLink="/services" routerLinkActive="" (click)="closeMenu()">Services</a>
             </li>
             <li>
-                <a routerLink="/pricing" routerLinkActive="active">Pricing</a>
+                <a routerLink="/pricing" routerLinkActive="active" (click)="closeMenu()">Pricing</a>
             </li>
             <li>
-                <a routerLink="/contact" routerLinkActive="active">Contact</a>
+                <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
             </li>
-        </ul>
+        </ul>    
     </nav>
 </header>
