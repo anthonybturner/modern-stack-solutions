@@ -6,6 +6,8 @@
 
 .contact-header {
     text-align: center;
+        border-bottom: 1px solid var(--accent-clr);
+
 }
 
 .contact-content {
@@ -22,20 +24,29 @@
 }
 
 .contact-info {
+    display: flex;
+    flex-direction: column;
+
+    
     i {
-        margin-top: var(--spacer);
-        font-size: var(--font-size);
         color: var(--accent-clr);
     }
 
     p {
         margin: 0;
     }
+    .info-item{
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: flex-start;
+        gap: 1rem;
+
+    }
 }
 
 .contact-form {
-    
-
+    flex: .5;
     .form-group {
         margin-bottom: 1.5rem;
     }
@@ -46,7 +57,6 @@
         padding: 1rem;
         border: 1.5px solid #dbeafe;
         box-sizing: border-box;
-        font-size: 1.05rem;
         background: rgba(255, 255, 255, 0.7);
         box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
         transition: border-color 0.2s, box-shadow 0.2s;
@@ -61,7 +71,6 @@
         border: none;
         padding: 1rem;
         border-radius: 30px;
-        font-size: 1.1rem;
         cursor: pointer;
         font-weight: 700;
         box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
@@ -79,14 +88,12 @@
 
 .error-message {
     color: #e53935;
-    font-size: 0.95rem;
     margin-top: 0.5rem;
     text-align: left;
 }
 
 .success-message {
     color: #2196f3;
-    font-size: 1.1rem;
     margin-top: 1.2rem;
     text-align: center;
     background: rgba(200, 240, 255, 0.3);
@@ -104,27 +111,16 @@
 }
 
 @media (max-width: 600px) {
-
-    h1 {
-        font-size: 24px;
-    }
-
     .contact-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: 1rem;
-
-        h2 {
-            font-size: 16px;
-        }
     }
-
     .contact-container {
         padding: 0;
 
     }
-
     .contact-form {
         max-width: 100%;
         flex: 1;

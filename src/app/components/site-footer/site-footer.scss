@@ -97,17 +97,21 @@
     flex-direction: column;
     align-items: center;
 
-    .brand{
-      p{
+    .brand {
+      p {
         margin: 0;
       }
     }
-    .content{
+
+    .content {
       gap: var(--gap);
     }
+
     .container {
 
-      flex: 1;
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
 
       h3 {
         margin-top: 0;
@@ -115,13 +119,13 @@
       }
 
     }
- 
+
 
     .links {
       gap: 0;
     }
 
-    a{
+    a {
       padding: 0;
     }
 
