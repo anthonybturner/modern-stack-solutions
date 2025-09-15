@@ -1,22 +1,45 @@
+@use './abstract' as *;
 .site-header {
+     @include frosted-glass-bg(#ffffff21);
     display: flex;
     padding: var(--padding);
     gap: var(--gap);
     align-items: var(--primary-align-items);
 
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
         width: 280px;
         height: 60px;
 
-        img, svg{
+        .logo-bar1 {
+            fill: var(--accent-clr);
+        }
+
+        .logo-bar2 {
+            fill: #ffffff;
+        }
+
+        .logo-bar3 {
+            fill: #2196f3;
+        }
+
+        .logo-text {
+            fill: #fff;
+
+            tspan {
+                fill: var(--accent-clr);
+            }
+        }
+
+        img,
+        svg {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        text{
+        text {
             font-size: var(--font-size);
         }
     }

@@ -1,22 +1,15 @@
+@use './abstract' as *;
+
 /* Portfolio Page Styles */
 .portfolio-container {
-    max-width: 1100px;
-    margin: 3rem auto;
-    padding: 2rem;
-    border-radius: 1rem;
-    background: var(--secondary-clr);
-    box-shadow: 4px 4px 4px -4px;
+    @include frosted-glass-bg(var(--frosted-glass-clr));
 }
 
 .portfolio-header {
     text-align: center;
     margin-bottom: 2.5rem;
+    border-bottom: 1px solid #ccc;
 
-
-    p {
-        color: #555;
-        font-size: 1.2rem;
-    }
 }
 
 .portfolio-grid {
@@ -27,9 +20,7 @@
 }
 
 .portfolio-card {
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px var(--accent-clr);
+    @include frosted-glass-bg(var(--frosted-glass-alt-clr));
     padding: 1.5rem;
     text-align: center;
     width: 300px;
@@ -46,11 +37,6 @@
         border-radius: 8px;
         margin-bottom: 1rem;
         box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
-    }
-
-    p {
-        color: #555;
-        font-size: 1rem;
     }
 
     a {

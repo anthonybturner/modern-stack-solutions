@@ -1,16 +1,17 @@
-
+@use './abstract' as *;
 
 .footer {
-  // Layout Properties
+  //position: fixed;
+  // bottom: 0;
+  // Background & Visual
+  @include frosted-glass-bg(#ffffff21);
 
+  // Layout Properties
   width: 100%;
   z-index: 1000;
-  
-  // Background & Visual
-  background-color: color-mix(in srgb, var(--secondary-clr) 40%, transparent);
-  backdrop-filter: blur(10px);
-  box-shadow: var(--shadow-soft);
-  
+  margin-top: 1rem;
+
+
   // Transitions & Animations
   transition: all 0.3s ease;
 
@@ -18,10 +19,8 @@
   .container {
     // Layout
     margin: 0 auto;
-    
     // Box Model
     max-width: 1200px;
-    height: 148px;
     padding: 0 20px;
   }
 
@@ -31,13 +30,13 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
+
+  //Columns for footer
+  //Brand Column
   .brand {
-    h3 {
-      // Box Model
-      margin-bottom: 1rem;
-      // Typography
-      font-size: var(--fs-p);
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     p {
       // Visual
@@ -45,45 +44,42 @@
     }
   }
 
+  //Links Column
   .links {
     // Layout
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    gap: 1rem;
 
     ul {
       // Layout
       display: flex;
-      
       // Box Model
       margin: 0;
       padding: 0;
-      
       // Typography
       list-style: none;
     }
   }
 
+//Social Column
   .social {
-    h4 {
-      // Box Model
-      margin-bottom: var(--spacer);
-      
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     .social-links {
       // Layout
-      
       display: flex;
-      gap: var(--spacer);
+      gap: var(--spacer-sm);
 
       a {
-        color: #000;
+
         // Pseudo-elements & States
         &:hover {
           // Transforms & Transitions
-          transform: translateY(1rem);
-          transition: all 0.4s ease;
+          transform: translateY(.5rem);
+          transition: all 0.2s ease;
         }
       }
     }
@@ -93,7 +89,7 @@
     // Layout
     text-align: center;
     // Box Model
-    border-top: 1px solid rgba(64, 25, 172, 0.74);
+    border-top: 1px solid var(--accent-clr);
     // Visual
     opacity: 0.8;
   }

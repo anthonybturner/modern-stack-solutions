@@ -1,21 +1,13 @@
+@use 'abstract' as *;
 // Services Page Styles
 .services-container {
-    max-width: 1100px;
-    margin: 3rem auto;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-    background: var(--secondary-clr);
-    box-shadow: 4px 4px 4px -4px;
+    @include frosted-glass-bg(var(--frosted-glass-clr));
 }
 
 .services-header {
     text-align: center;
     margin-bottom: 2.5rem;
-
-    p {
-        color: #555;
-        font-size: 1.2rem;
-    }
+    border-bottom: 1px solid var(--accent-clr);
 }
 
 .services-grid {
@@ -26,15 +18,13 @@
 }
 
 .service-card {
-    background: #f7f9fc;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    padding: 2rem 1.5rem;
-    text-align: center;
-    width: 300px;
+    @include frosted-glass-bg(var(--frosted-glass-alt-clr));
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 300px;
+    
     margin-bottom: 2rem;
     transition: box-shadow 0.2s;
 
@@ -48,13 +38,9 @@
         display: block;
     }
 
-    p {
-        color: #555;
-        font-size: 1rem;
-    }
-
     img {
         width: 300px;
+        height: 200px;
 
     }
 

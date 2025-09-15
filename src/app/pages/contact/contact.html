@@ -1,12 +1,11 @@
 <div class="contact-container">
-  <section class="contact-section">
-    <div class="section-header">
+    <div class="contact-header">
       <h1>Get In Touch</h1>
       <p>Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
     </div>
 
     <div class="contact-content">
-      <div class="contact-left-col">
+      <div class="contact-info">
         <h2>Contact Information</h2>
         <div class="contact-info">
           <div class="info-item">
@@ -34,7 +33,7 @@
           </div>
         </div>
       </div>
-      <div class="contact-right-col">
+      <div class="contact-form">
         <h2>Send a Message</h2>
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <div class="form-group">
@@ -73,5 +72,4 @@
         </form>
       </div>
     </div>
-  </section>
 </div>

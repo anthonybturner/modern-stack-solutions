@@ -1,40 +1,30 @@
+@use './abstract' as *;
+
 .pricing-table-container {
-    max-width: 1100px;
-    margin: 3rem auto;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-    background: var(--secondary-clr);
-    box-shadow: 4px 4px 4px -4px;
+   @include frosted-glass-bg(#ffffff21);
 }
 
 .pricing-table-header {
     text-align: center;
-    margin-bottom: 2.5rem;
-
-    p {
-        color: #555;
-        font-size: 1.2rem;
-    }
+    border-bottom: 1px solid var(--accent-clr);
 }
 
 .pricing-table {
     display: flex;
+    flex-direction: column;
     gap: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
+   
 }
 
 .pricing-plan {
-    background: #fff;
-    border-radius: 14px;
-    padding: 2rem 1.5rem;
-    text-align: center;
+   @include frosted-glass-bg(var(--frosted-glass-alt-clr));
+    width: 80%;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
+    text-align: center;
     transition: box-shadow 0.2s, transform 0.2s;
-    position: relative;
 
     .plan-icon {
         font-size: 2.5rem;
@@ -42,14 +32,10 @@
     }
 
     .plan-price {
-        font-size: 2.2rem;
-        color: #1a2233;
         margin-bottom: 1rem;
         font-weight: bold;
-
         span {
             font-size: 1rem;
-            color: #555;
             margin-left: 0.2rem;
         }
     }
@@ -60,7 +46,6 @@
         margin-bottom: 1.5rem;
 
         li {
-            color: #555;
             margin-bottom: 0.5rem;
             font-size: 1rem;
         }
@@ -100,5 +85,9 @@
 
     .pricing-plan {
         width: 90%;
+        select{
+            width: 80%;
+            max-width: 80%;
+        }
     }
 }

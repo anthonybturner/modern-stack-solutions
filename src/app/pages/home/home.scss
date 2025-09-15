@@ -1,15 +1,30 @@
+@use './abstract' as *;
 
 .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 5rem 2rem 4rem 2rem;
-  margin-bottom: 2rem;
-  max-width: 1200px;
-  margin: 1rem auto;
+
+  .container {
+    padding: 1rem;
+    flex: .8;
+    border-radius: 2px 2px 2px 2px;
+  }
 
   p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
   }
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: var(--accent-clr);
+    }
+  }
+
   .cta {
     background: var(--primary-clr);
     color: var(--accent-clr);
@@ -19,8 +34,9 @@
     border-radius: 30px;
     cursor: pointer;
     font-weight: 600;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: background 0.2s, color 0.2s;
+
     &:hover {
       background: var(--accent-clr);
       color: #fff;
@@ -28,13 +44,20 @@
   }
 }
 
-.about, .services, .portfolio, .testimonials, .contact {
-  padding: 3rem 2rem;
+.hero,
+.about,
+.services,
+.portfolio,
+.testimonials,
+.contact {
+  @include frosted-glass-bg(var(--frosted-glass-clr));
+  padding: 2rem 2rem;
   max-width: 1200px;
   margin: 1rem auto;
-  color: var(--primary-text-clr);
 }
-
+section h2{
+  border-bottom: 1px solid var(--accent-clr);
+}
 .service-grid {
   display: flex;
   gap: 2rem;
@@ -43,9 +66,8 @@
   margin-top: 2rem;
 
   .service-card {
-    background: #f7f9fc;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+     @include frosted-glass-bg(var(--frosted-glass-alt-clr));
+
     padding: 2rem 1.5rem;
     text-align: center;
     width: 250px;
@@ -54,11 +76,6 @@
       font-size: 2.5rem;
       margin-bottom: 1rem;
       display: block;
-    }
-
-    p {
-      color: #555;
-      font-size: 1rem;
     }
   }
 }
@@ -70,9 +87,7 @@
   justify-content: center;
 
   .portfolio-item {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    @include frosted-glass-bg(var(--frosted-glass-alt-clr));
     padding: 1.5rem;
     text-align: center;
     width: 250px;
@@ -81,10 +96,6 @@
       width: 100%;
       border-radius: 8px;
       margin-bottom: 1rem;
-    }
-    p {
-      color: #555;
-      font-size: 1rem;
     }
   }
 }
@@ -115,13 +126,83 @@
   font-size: 1rem;
 }
 
+//Tablets
 @media (max-width: 900px) {
-  .service-grid, .portfolio-grid {
+
+  .hero,
+  .about,
+  .services,
+  .portfolio,
+  .testimonials,
+  .contact {
+    padding: 12px;
+    margin: 1rem auto;
+  }
+
+
+  .service-grid,
+  .portfolio-grid {
     flex-direction: column;
     align-items: center;
   }
+
+  .service-grid .service-card,
+  .portfolio-grid .portfolio-item {
+
+    padding: 0;
+    width: 100%;
+
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
   .header {
     flex-direction: column;
+
+    .nav {
+      margin-top: 1rem;
+    }
+  }
+}
+
+//Phones
+@media (max-width: 600px) {
+
+  .hero,
+  .about,
+  .services,
+  .portfolio,
+  .testimonials,
+  .contact {
+    padding: 12px;
+    margin: 1rem auto;
+  }
+
+  .service-grid,
+  .portfolio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-grid .service-card,
+  .portfolio-grid .portfolio-item {
+
+    padding: 0;
+    width: 100%;
+
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  .header {
+    flex-direction: column;
+
     .nav {
       margin-top: 1rem;
     }
