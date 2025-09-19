@@ -8,13 +8,13 @@ import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { Contact } from './pages/contact/contact';
 
 const routeConfig: Routes = [
-    { path: '', component: Home },
-    { path: 'portfolio', component: PortfolioComponent },
-    { path: 'pricing', component: Pricing },
-    { path: 'proposal', component: ProposalComponent },
-    { path: 'questionnaire', component: QuestionnaireComponent },
-    { path: 'contact', component: Contact},
-    { path: 'services', component: Services },
+    { path: '', component: Home, title: 'Modern Stack Solutions' },
+    { path: 'portfolio', component: PortfolioComponent, title: 'Modern Stack S - Portfolio' },
+    { path: 'pricing', component: Pricing, title: 'Modern Stack S - Pricing' },
+    { path: 'proposal', component: ProposalComponent, title: 'Modern Stack S - Proposal' },
+    { path: 'questionnaire', component: QuestionnaireComponent, title: 'Modern Stack S - Questionnaire' },
+    { path: 'contact', component: Contact, title: 'Modern Stack S - Contact' },
+    { path: 'services', component: Services , title: 'Modern Stack S - Services' },
 
     { path: '**', redirectTo: '' },
 ];

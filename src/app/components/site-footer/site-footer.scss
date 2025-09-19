@@ -20,81 +20,123 @@
   .container {
     flex: 1;
     flex-direction: column;
-  }
 
-  .content {
-    // Layout
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  }
-
-
-  //Columns for footer
-  //Brand Column
-  .brand {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    p {
-      // Visual
-      opacity: 0.9;
-    }
-  }
-
-  //Links Column
-  .links {
-    // Layout
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    ul {
+    .content {
       // Layout
       display: flex;
-      // Box Model
-      margin: 0;
-      padding: 0;
-      // Typography
-      list-style: none;
-      gap: var(--gap-sm);
-    }
-  }
+      justify-content: baseline;
+      align-content: space-between;
 
-  //Social Column
-  .social {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+      //Columns for footer
+      //Brand Column
+      .brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
-    .social-links {
-      // Layout
-      display: flex;
-      gap: var(--gap-sm);
-
-      a {
-
-        // Pseudo-elements & States
-        &:hover {
-          // Transforms & Transitions
-          transform: translateY(.5rem);
-          transition: all 0.2s ease;
+        p {
+          // Visual
+          opacity: 0.9;
         }
+      }
+
+      //Links Column
+      .links {
+        // Layout
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        ul {
+          // Layout
+          display: flex;
+          // Box Model
+          margin: 0;
+          padding: 0;
+          // Typography
+          list-style: none;
+          gap: var(--gap-sm);
+        }
+      }
+
+
+      //Social Column
+      .social {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .social-links {
+          // Layout
+          display: flex;
+
+          a {
+
+            // Pseudo-elements & States
+            &:hover {
+              // Transforms & Transitions
+              transform: translateY(.5rem);
+              transition: all 0.2s ease;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        // Layout
+        text-align: center;
+        // Box Model
+        border-top: 1px solid var(--accent-clr);
+        // Visual
+        opacity: 0.8;
       }
     }
   }
 
-  .bottom {
-    // Layout
-    text-align: center;
-    // Box Model
-    border-top: 1px solid var(--accent-clr);
-    // Visual
-    opacity: 0.8;
+
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer {
+    flex-direction: row;
+    align-items: center;
+
+    .container {
+      width: 100%;
+      padding: 1rem;
+      box-sizing: border-box;
+
+      .content {
+        gap: var(--gap);
+
+        .brand {
+          p {
+            margin: 10px;
+          }
+
+          .links {
+            gap: 0;
+          }
+        }
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+    }
+
+
+    a {
+      padding: 0;
+    }
   }
 
-  @media (max-width: 600px) {
-    flex-direction: column;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .footer {
     align-items: center;
 
     .brand {
@@ -104,6 +146,7 @@
     }
 
     .content {
+      flex-direction: column;
       gap: var(--gap);
     }
 
@@ -128,6 +171,5 @@
     a {
       padding: 0;
     }
-
   }
 }
