@@ -31,12 +31,18 @@
         transform: translateY(-6px) scale(1.03);
     }
 
+    
     img {
         width: 100%;
         border-radius: 8px;
         margin-bottom: 1rem;
+        height: 200px;
         box-shadow: 0 2px 8px rgba(44, 62, 80, 0.04);
+        display: block;
+        object-fit: cover;
     }
+    
+    
 
     a {
         display: inline-block;
@@ -62,5 +68,9 @@
         width: 90%;
         margin: 1rem auto;
         padding: 0;
+
+        img{
+            height: auto;
+        }
     }
 }
