@@ -1,42 +1,70 @@
 <div class="pricing-table-container">
+    <div id="result" class="result-section" role="region" aria-live="polite"></div>
+
   <div class="pricing-table-header">
     <h1>Pricing Calculator</h1>
-    <p>Select a base project, extra pages, and features to estimate a price range.</p>
+    <p class="subtitle">Get an instant estimate for your project. Select options below to customize your quote.</p>
   </div>
+  
   <div class="pricing-table">
     <div class="pricing-plan featured">
-      <div class="plan-icon">💻</div>
-      <h3>Base Project</h3>
-      <p>Select the main type of project you need.</p>
-      <div class="plan-price">
-        <select #baseSel>
-          <option *ngFor="let b of baseProjects; let i = index" [value]="i">{{b.name}} ({{b.min}}–{{b.max}})</option>
+      <div class="plan-header">
+        <div class="plan-icon">💻</div>
+        <h3>Base Project</h3>
+        <p>Choose your primary project type</p>
+      </div>
+      <div class="plan-content">
+        <label for="baseSel" class="visually-hidden">Select base project type</label>
+        <select id="baseSel" #baseSel class="custom-select" aria-label="Base project type">
+          <option *ngFor="let b of baseProjects; let i = index" [value]="i">
+            {{b.name}} - ${{b.min}} to ${{b.max}}
+          </option>
         </select>
       </div>
     </div>
+    
     <div class="pricing-plan">
-      <div class="plan-icon">�</div>
-      <h3>Extra Screens</h3>
-      <p>Add additional pages or screens to your project.</p>
-      <div class="plan-price">
-        <input type="number" #extraScreens value="0" min="0" />
+      <div class="plan-header">
+        <div class="plan-icon">📱</div>
+        <h3>Extra Screens</h3>
+        <p>Add additional pages or views</p>
+      </div>
+      <div class="plan-content">
+        <div class="input-group">
+          <label for="extraScreens">Number of screens:</label>
+          <input type="number" id="extraScreens" #extraScreens value="0" min="0" class="custom-input" aria-label="Number of extra screens" />
+        </div>
+        <p class="input-hint">Each additional screen adds to the project cost</p>
       </div>
     </div>
-    <div class="pricing-plan">
-      <div class="plan-icon">✨</div>
-      <h3>Features</h3>
-     <p>Choose extra features to include in your estimate.</p>
-      <div class="plan-price">
-        <ul>
-          <li *ngFor="let f of features; let i=index">
-            <label>
-              <input type="checkbox" [value]="i" #feat{{i}} />
-              {{f.name}} <span class="price">({{f.min}}–{{f.max}})</span>
+    
+    <div class="pricing-plan premium">
+      <div class="plan-header">
+        <div class="plan-icon">✨</div>
+        <h3>Premium Features</h3>
+        <p>Enhance your project with extras</p>
+      </div>
+      <div class="plan-content">
+        <ul class="features-list">
+          @for(f of features; track f; let i = $index){
+          <li class="feature-item">
+            <label class="feature-label">
+              <input type="checkbox" [value]="i" #feat{{i}} class="feature-checkbox" aria-label="{{f.name}}" />
+              <span class="feature-name">{{f.name}}</span>
+              <span class="feature-price">${{f.min}} - ${{f.max}}</span>
             </label>
           </li>
+          }
         </ul>
       </div>
     </div>
   </div>
-  <div id="result"></div>
+  
+  <div class="calculate-section">
+    <button class="calculate-btn" (click)="calculatePrice(baseSel, extraScreens)" aria-label="Calculate price estimate">
+      <span class="btn-icon">📊</span>
+      Calculate Estimate
+    </button>
+  </div>
+  
 </div>

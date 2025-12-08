@@ -1,175 +1,142 @@
 @use './abstract' as *;
 
 .footer {
-  display: flex;
-  align-items: flex-start;
-  align-content: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-sm);
   @include frosted-glass-bg(#ffffff21);
   // Layout Properties
-
   z-index: 1000;
   margin-top: 1rem;
-
-
   // Transitions & Animations
   transition: all 0.3s ease;
 
   // Nested Components
   .container {
-    flex: 1;
-    flex-direction: column;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
 
-    .content {
-      // Layout
+    //Columns for footer
+    //Brand Column
+    .brand {
       display: flex;
-      justify-content: baseline;
-      align-content: space-between;
+      flex-direction: column;
+      justify-content: flex-end;
 
-      //Columns for footer
-      //Brand Column
-      .brand {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        p {
-          // Visual
-          opacity: 0.9;
-        }
+      p {
+        // Visual
+        opacity: 0.9;
       }
+    }
 
-      //Links Column
-      .links {
+    //Social Column
+    .social {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .social-links {
         // Layout
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        align-items: flex-end;
 
-        ul {
-          // Layout
-          display: flex;
-          // Box Model
-          margin: 0;
-          padding: 0;
-          // Typography
-          list-style: none;
-          gap: var(--gap-sm);
-        }
-      }
+        a {
 
-
-      //Social Column
-      .social {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .social-links {
-          // Layout
-          display: flex;
-
-          a {
-
-            // Pseudo-elements & States
-            &:hover {
-              // Transforms & Transitions
-              transform: translateY(.5rem);
-              transition: all 0.2s ease;
-            }
+          // Pseudo-elements & States
+          &:hover {
+            // Transforms & Transitions
+            transform: translateY(.5rem);
+            transition: all 0.2s ease;
           }
         }
       }
-
-      .bottom {
-        // Layout
-        text-align: center;
-        // Box Model
-        border-top: 1px solid var(--accent-clr);
-        // Visual
-        opacity: 0.8;
-      }
     }
-  }
+
+    .bottom {
+      display: flex;
+      align-items: flex-end;
+
+      // Box Model
+      border-top: 1px solid var(--accent-clr);
+      // Visual
+      opacity: 0.8;
+    }
 
 
-}
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .footer {
+        flex-direction: row;
+        align-items: center;
 
-@media (min-width: 601px) and (max-width: 1024px) {
-  .footer {
-    flex-direction: row;
-    align-items: center;
+        .container {
+          width: 100%;
+          padding: 1rem;
+          box-sizing: border-box;
 
-    .container {
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
+          .content {
+            gap: var(--gap);
 
-      .content {
-        gap: var(--gap);
+            .brand {
+              p {
+                margin: 10px;
+              }
+
+              .links {
+                gap: 0;
+              }
+            }
+          }
+
+          h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+        }
+
+
+        a {
+          padding: 0;
+        }
+      }
+
+    }
+
+    @media (min-width: 0px) and (max-width: 600px) {
+      .footer {
+        align-items: center;
 
         .brand {
           p {
-            margin: 10px;
-          }
-
-          .links {
-            gap: 0;
+            margin: 0;
           }
         }
+
+        .content {
+          flex-direction: column;
+          gap: var(--gap);
+        }
+
+        .container {
+
+          width: 100%;
+          padding: 1rem;
+          box-sizing: border-box;
+
+          h3 {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+        }
+
+
+        .links {
+          gap: 0;
+        }
+
+        a {
+          padding: 0;
+        }
       }
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-    }
-
-
-    a {
-      padding: 0;
-    }
-  }
-
-}
-
-@media (min-width: 0px) and (max-width: 600px) {
-  .footer {
-    align-items: center;
-
-    .brand {
-      p {
-        margin: 0;
-      }
-    }
-
-    .content {
-      flex-direction: column;
-      gap: var(--gap);
-    }
-
-    .container {
-
-      width: 100%;
-      padding: 1rem;
-      box-sizing: border-box;
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-    }
-
-
-    .links {
-      gap: 0;
-    }
-
-    a {
-      padding: 0;
     }
   }
 }

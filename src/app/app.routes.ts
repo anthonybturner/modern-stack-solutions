@@ -4,12 +4,12 @@ import { Pricing } from './pages/pricing/pricing';
 import { ProposalComponent } from './pages/proposal/proposal.component';
 import { QuestionnaireComponent } from './pages/questionnaire/questionnaire.component';
 import { Services } from './pages/services/services';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { PortfolioSection } from './pages/portfolio/portfolio-section.component';
 import { Contact } from './pages/contact/contact';
 
 const routeConfig: Routes = [
     { path: '', component: Home, title: 'Modern Stack Solutions' },
-    { path: 'portfolio', component: PortfolioComponent, title: 'Modern Stack S - Portfolio' },
+    { path: 'portfolio', component: PortfolioSection, title: 'Modern Stack S - Portfolio' },
     { path: 'pricing', component: Pricing, title: 'Modern Stack S - Pricing' },
     { path: 'proposal', component: ProposalComponent, title: 'Modern Stack S - Proposal' },
     { path: 'questionnaire', component: QuestionnaireComponent, title: 'Modern Stack S - Questionnaire' },

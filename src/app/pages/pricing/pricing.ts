@@ -29,6 +29,22 @@ export class Pricing {
 
   result: any = null;
 
+  calculatePrice(baseSelect: HTMLSelectElement, extraScreensInput: HTMLInputElement): void {
+    const baseIndex = Number(baseSelect.value);
+    const extraScreens = Number(extraScreensInput.value);
+    this.estimate(baseIndex, extraScreens);
+    
+    // Display result
+    const resultDiv = document.getElementById('result');
+    if (resultDiv && this.result) {
+      resultDiv.innerHTML = `
+        <h3>Estimated Price Range</h3>
+        <p class="price-range">$${this.result.min.toLocaleString()} - $${this.result.max.toLocaleString()}</p>
+        <p class="price-note">*Final price may vary based on project complexity and requirements</p>
+      `;
+    }
+  }
+
   estimate(baseIndex: number, extraScreens: number) {
     let base = this.baseProjects[Number(baseIndex)];
     let min = base.min + Number(extraScreens) * 200;

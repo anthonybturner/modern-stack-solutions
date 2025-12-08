@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TECH_STACK, TechStack } from '../../data/tech-stack.data';
+import { Component } from '@angular/core';
 
 export type Project = {
   id: number;
@@ -10,22 +8,19 @@ export type Project = {
   image?: string;
   liveUrl?: string;
   sourceUrl?: string;
+  downloadUrl?: string;
   type: 'demo' | 'download';
   wip?: boolean;
 }
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
+  selector: 'app-portfolio-section',
   imports: [CommonModule],
-  templateUrl: 'home.html',
-  styleUrl: 'home.scss',
+  templateUrl: './portfolio-section.component.html',
+  styleUrl: './portfolio-section.component.scss'
 })
-export class Home {
-  techStack: TechStack[] = TECH_STACK;
-  testimonialsEnabled: boolean = false;
-  
-  featuredProjects: Project[] = [
+export class PortfolioSection {
+  projects: Project[] = [
     {
       id: 0,
       name: "Movies Database Built with React",
@@ -42,27 +37,26 @@ export class Home {
       image: "images/portfolio/marvel-rivals-site-thumb.jpg",
       liveUrl: "https://marvelrivalsstats.vercel.app/",
       sourceUrl: "https://github.com/anthonybturner/marvelrivalsui",
-      type: 'demo',
-      wip: true
-
+      type: 'demo'
     },
     {
-      id: 2,
-      name: "Personal Portfolio Website",
+     id: 2,
+     name: "Personal Portfolio Website (next.js - official)",
+     description: "My personal portfolio showcasing projects, skills, and experience. Clean, modern design built with responsive web technologies.",
+     image: "images/portfolio/anthony-portfolio-thumb.jpg",
+     liveUrl: "https://anthonybturner-next.vercel.app/",
+     type: 'demo'
+   },
+    {
+      id: 3,
+      name: "Personal Portfolio Website (angular) alternative",
       description: "My personal portfolio showcasing projects, skills, and experience. Clean, modern design built with responsive web technologies.",
-      image: "images/portfolio/anthony-portfolio-thumb.jpg",
-      liveUrl: "https://anthonybturner-next.vercel.app/",
-      type: 'demo'
-    }
+      image: "images/portfolio/software-dev-portfolio-thumb.jpg",
+      liveUrl: "https://anthonybturner.vercel.app/",
+      sourceUrl: "https://github.com/anthonybturner/software-dev-portfolio",
+      type: 'demo',
+      wip: true
+    },
   ];
-
-  constructor(private router:Router){}
-
-  GotoContact(): void{
-    this.router.navigate(['/contact']);
-  }
-  
-  GotoPortfolio(): void{
-    this.router.navigate(['/portfolio']);
-  }
 }
+
