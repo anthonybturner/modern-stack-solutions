@@ -1,13 +1,13 @@
-<div class="contact-container">
-    <div class="contact-header">
+<section class="contact-container">
+    <div class="section-header">
       <h1>Get In Touch</h1>
       <p>Have a project in mind or want to discuss opportunities? Feel free to reach out!</p>
     </div>
 
-    <div class="contact-content">
-      <div class="contact-info">
+    <div class="section-content">
+      <div class="section-info">
         <h2>Contact Information</h2>
-        <div class="contact-info">
+        <div class="section-info">
           <div class="info-item">
             <h3>Email</h3>
             <i class="fas fa-envelope"></i>
@@ -27,9 +27,9 @@
           </div>
         </div>
       </div>
-      <div class="contact-form">
+      <div class="section-form">
         <h2>Send a Message</h2>
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="section-form">
           <div class="form-group">
             <input type="text" formControlName="name" placeholder="Your Name"
               [class.error]="submitted && contactForm.get('name')?.errors">
@@ -66,4 +66,4 @@
         </form>
       </div>
     </div>
-</div>
+</section>

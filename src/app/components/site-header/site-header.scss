@@ -47,7 +47,7 @@
         }
 
         text {
-            font-size: var(--font-size);
+            font-size: var(--fs-body);
         }
 
         @media (min-width: 0px) and (max-width: 600px) {
@@ -74,9 +74,11 @@
             @include frosted-glass-bg(#435B60);
             position: fixed;
             top: 90px;
+            left: 0;
             width: 100%;
             box-sizing: border-box;
             border-radius: .5rem;
+            text-align: center;
 
             // Transforms & Transitions
             transform: translateY(-100%);
@@ -95,7 +97,7 @@
                     width: 100%;
 
                     a {
-                        font-size: var(--font-size-3);
+                        font-size: var(--fs-h3);
                     }
                 }
 
